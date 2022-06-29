@@ -116,39 +116,26 @@
     }
  </script>
 <h4> "Ejercicio 4" </h4>
-
-<label for= "ej4_cel">Celsius:</label> 
-<input type="number" id="ej4_cel" value="0">
-
-<label for= "ej4_fahren">Fahrenheit:</label> 
-<input type="number" id="ej4_fahren" value="0">
-
-<button onclick="func_ej4(ej4_cel,ej4_fahren)">Convertir</button>
-
-
-<script> 
-   function func_ej4() {
-
-   let far = parseFloat(ej4_fahren.value);
-   let cel = parseFloat(ej4_cel.value);
-
-   if (cel != 0 && far == 0) {  
-    far = (cel * 1.8) + 32
-
-       document.getElementById('ej4_fahren').value = far
-       document.getElementById('ej4_cel').value = 0
-       
-    }else{
-
-        cel = (far - 32)*(9/5) 
-
-         document.getElementById('ej4_cel').value = cel
-         document.getElementById('ej4_fahren').value = 0
-
-     }
-
-  }     
+<label for="celsius">celsius</label>
+<input type="number" id="celsius">
+<label for="far">Fahrenheit</label>
+<input type="number" id="far">
+<button onclick="ResultadoEj4()">Resultado de traspaso</button>
+<input type=" text" id="ResultadoEj4">
+<input type="text"id="resultado4far">
+<script>
+    function ResultadoEj4(){
+      
+    let c1=parseFloat( document.getElementById("celsius").value)
+    c1=(c1 * (9 / 5) + 32)
+    let f1=parseFloat( document.getElementById("far").value)
+    f1=((f1-32)/1.8000)
+    document.getElementById("ResultadoEj4").value= "El traspaso es " + c1
   
+    
+    document.getElementById("resultado4far").value= "El traspaso es " + f1
+
+}
 </script>
 <h4> "Ejercicio 5" </h4>
 
@@ -258,6 +245,15 @@
         }
      
       </script>
+      <h4>"Ejercicio 8"</h4>
+
+      <label for="ej8_num">Numero</label>
+      <input type="number" id="ej8_num">
+      
+      <button onclick="func_8()">Mostrar</button>
+      
+      <label for="ej8_numeros_primos">Numero primos anteriores del numero</label>
+      <input type="number" id="ej8_numeros_primos">
     
      <h4> "Ejercicio 9" </h4>
 
@@ -299,42 +295,16 @@
  <input type="number" id="ej10_v1">
 
  <label for= "ej10_v2">Número 2</label>
- <input type="number" id="ej10_v2">
+ <label for="ej10_valor01">Primer valor entero</label>
+<input type="number" id="ej10_valor01">
 
- <button onclick="func_ej10(ej10_v1,ej10_v2)">Resultado:</button>
+<label for="ej10_valor02">Segundo valor entero</label>
+<input type="number" id="ej10_valor02">
 
-<label for= "ej10_result"></label>
-<input type="text" id="ej10_result">
+<button onclick="func_10()">Mostrar</button>
 
-<script> 
-       function func_ej10(){
-
-       let nro1= parseInt(document.getElementById('ej10_v1').value); 
-
-       let nro2= parseInt(document.getElementById('ej10_v2').value); 
-
-       let num = ""
-  
-       if (nro1 > nro2) {
-
-      for (let index = nro1 - 1; index > nro2 ; index--) {
-
-         num = num + index + ", ";
-     }
-         document.getElementById("ej10_result").value = num
-     } 
-
-        if (nro2 > nro1){
-
-          for (let index = nro1 + 1; nro2 > index ; index++) {
-
-              num = num + index + ", ";;
-         }
-          document.getElementById("ej10_result").value = num
-        }
-
-  }
-  
+<label for="ej10_numeros">Ambos valores</label>
+<input type="number" id="ej10_numeros">
 </script>
            
 <script> src="tpjs.html" </script>
